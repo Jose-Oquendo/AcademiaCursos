@@ -15,7 +15,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$alias -> nombre}}</h5>{{--Con esta interpolacion sacamos la info de la bd, el nombre es como se llama el campo de la bd--}}
                     <p class="card-text">{{$alias -> description}}</p>
-                    <a href="{{route('curso.show', $alias->id)}}" class="btn btn-primary btn-dark">Ver mas</a>
+                    {{-- <a href="{{ route('curso.show', $alias->id) }}" class="btn btn-primary btn-dark">Ver mas</a> --}}
+                    <a href="{{ route('curso.show', $alias->id) }}" class="btn btn-primary btn-dark">Ver mas</a>
                 </div>
             </div>
         </div>
