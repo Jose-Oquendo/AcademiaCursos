@@ -25,7 +25,7 @@
                     <button type="button" class="btn btn-transparent px-0 py-2 text-white dropdown-toggle" data-toggle="dropdown">
                         Gestion
                     </button>
-                    <div class="dropdown-menu col-md-4 ml-5">
+                    <div class="dropdown-menu col-md-4 ml-md-5">
                         <a class="dropdown-item" href="/curso/create">Cursos<span class="sr-only">(current)</span></a>
                         <a class="dropdown-item" href="/docentes/create">Docentes<span class="sr-only">(current)</span></a>
                     </div>

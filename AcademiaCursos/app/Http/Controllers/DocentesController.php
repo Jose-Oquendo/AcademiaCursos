@@ -102,6 +102,13 @@ class DocentesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $docente = Docentes::find($id);
+        $urlfoto = $docente->foto;
+        $nombrefoto = str_replace('public/','\storage\\',$urlfoto);
+        $rutafoto = public_path().$nombrefoto;
+        unlink($rutafoto);
+
+        $docente->delete();
+        return redirect()->to("/docentes/");
     }
 }

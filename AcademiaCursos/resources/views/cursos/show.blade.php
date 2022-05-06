@@ -11,6 +11,7 @@
             <h4>{{$cursito->nombre}}</h4>
             <p>{{$cursito->description}}</p>
             <a href="{{route('curso.edit', $cursito->id)}}" class="btn btn-dark">Editar</a>
+            <a href="#" class="btn btn-dark d-inline">Eliminar</a>
         </div>
     </div>
 </div>
