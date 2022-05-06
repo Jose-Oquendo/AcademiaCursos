@@ -49,7 +49,6 @@
         <div class="form-group">
             <label class="form-label" for="foto">Foto del docente</label>
             <input class="form-control" name="foto" id="foto" type="file" value="" placeholder="" >
-            <small class="text-muted ">La foto debe tener un tamaño que no supere los 1024px de ancho y de largo</small>
         </div>
         <button type="submit" class="btn btn-primary">Guardar nuevo docente</button>
     </form>

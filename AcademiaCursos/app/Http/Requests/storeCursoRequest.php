@@ -24,8 +24,8 @@ class storeCursoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|max:10',
-            'imagen'=>'required|image|mimes:jpg,png',
+            'nombre'=>'required|max:20',
+            'imagen'=>'required|image|mimes:jpg,png|dimensions:min_width=500,min_height=500,max_width=1024,max_height=1024',        
         ];
     }
 }

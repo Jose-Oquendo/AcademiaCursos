@@ -24,12 +24,21 @@ class storeDocenteRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'lastName'=>'required',
+            'nombre'=>'required',
+            'apellido'=>'required',
             'edad'=>'required|max:2',
-            'email'=>'required|email',
+            // 'email'=>'required|email',
+            'email'=>'required',
+
+
+            'email'=>'email:rfc,dns',
+
+
             'ocupacion'=>'required',
-            'foto'=>'required|image|mimes:jpg,png|dimensions:min_width=1024,min_height=1024',
+            'foto'=>'required|image|mimes:jpg,png|dimensions:min_width=500,min_height=500,max_width=1024,max_height=1024',
         ];
     }
 }
+
+
+
