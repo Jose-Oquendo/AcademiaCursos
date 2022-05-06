@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-         <form class="" action="{{route('docente.update', $docente->id)}}" method="POST" enctype='multipart/form-data'>
+         <form class="" action="{{route('docentes.update', $docente->id)}}" method="POST" enctype='multipart/form-data'>
             @method('PATCH')
             @csrf
              <div>

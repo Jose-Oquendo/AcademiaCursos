@@ -20,13 +20,8 @@ Route::get('/', function () {
 });
 
 //Cursos
-Route::resource('curso/', CursoController::class);
-Route::get('curso/{id}', [CursoController::class, 'show'])->name('curso.show');
-Route::get('curso/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
-Route::patch('curso/{id}', [CursoController::class, 'update'])->name('curso.update');
+Route::resource('curso', CursoController::class);
 
 //docentes
-Route::resource('docentes/', DocentesController::class);
-Route::get('docentes/{id}', [DocentesController::class, 'show'])->name('docente.show');
-Route::patch('docentes/{id}', [DocentesController::class, 'update'])->name('docente.update');
+Route::resource('docentes', DocentesController::class);
 

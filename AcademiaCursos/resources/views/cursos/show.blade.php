@@ -11,7 +11,13 @@
             <h4>{{$cursito->nombre}}</h4>
             <p>{{$cursito->description}}</p>
             <a href="{{route('curso.edit', $cursito->id)}}" class="btn btn-dark">Editar</a>
-            <a href="#" class="btn btn-dark d-inline">Eliminar</a>
+            <form method="post" action="{{ route('curso.destroy', $cursito->id) }}" class="d-inline">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-dark">
+                    Eliminar
+                </button>
+            </form>
         </div>
     </div>
 </div>

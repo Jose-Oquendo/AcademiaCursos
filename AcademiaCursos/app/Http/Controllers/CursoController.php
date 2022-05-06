@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
+use App\Http\Requests\storeCursoRequest;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
@@ -26,7 +27,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        return view('cursos.create', ['message'=>null]);
     }
 
     /**
@@ -35,8 +36,15 @@ class CursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(storeCursoRequest $request)
     {
+        /*validaciones desde el controlador
+        $validacion = $request->validate([
+            'nombre'=>'required|max:10',
+            'imagen'=>'required|image',
+        ]);*/
+        //validaciones desde archivo request
+
         //vamos a crear una instancia del modelo curso para manipular la tabla
         $cursito= new Curso(); //se debe crear la instancia  y la importacion en use
         $cursito->nombre = $request->input('nombre');// nombre es el campo de de la bd y el segundo nombre es el del campo q creamos /**hace una peticion al servidor para q almacene lo diligenciado en el formulario la flecha conecta el metodo all que trae toda la info almacenada en request, si le pongo input o name entonces me aparece el campo q le pido */
@@ -47,7 +55,7 @@ class CursoController extends Controller
 
         }
         $cursito->save(); //para guardar la info en la bd
-        return redirect()->to('create/');
+        return redirect()->to('create/', ['message'=>True]);
     }
 
     /**

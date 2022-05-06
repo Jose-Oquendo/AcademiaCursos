@@ -14,8 +14,10 @@
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editModal">
                 Editar
             </button>
-            <form class="d-inline">
-                <button type="button" class="btn btn-light">
+            <form method="post" action="{{ route('docentes.destroy', $docente->id) }}" class="d-inline">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-light">
                     Eliminar
                 </button>
             </form>
